@@ -1,9 +1,6 @@
+<nav-bar title="Humber e-store"></nav-bar>
 <div class="container">
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
+    <item *ngFor="let products of productArr" [item]="products"></item>    
 </div>
 
 

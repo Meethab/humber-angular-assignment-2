@@ -28,11 +28,9 @@ export class NavBarComponent {
         const lowerCaseText = text.toLowerCase();
         const lowerCaseProductName = product.name.toLowerCase();
         return lowerCaseProductName.includes(lowerCaseText);
-        //console.log(this.filteredProducts);
       })
     } else {
       this.filteredProducts = this.productArr;
-      //console.log(this.filteredProducts);
     }
 
    } 

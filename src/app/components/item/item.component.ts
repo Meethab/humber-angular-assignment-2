@@ -16,13 +16,11 @@ export class ItemComponent implements OnInit {
   constructor(private proService: ProductsService) { }
 
   ngOnInit(): void {
-    //console.log(this.item.name);
+    
   }
 
   addToCart() {
     this.proService.cartItems.push(this.item)
-    //this.proService.setMsg(this.item)
-    //this.productAdded.emit(item);
   }
 
 }

@@ -29,17 +29,10 @@ export class ProductsService {
     return this.http.get('/assets/order-data.json')as Observable<OrderData>;    
   }
 
-  setMsg(product:ProductData) {
-    console.log(product)
-    this.subject.next(product) //triggering product items to service
-  }
 
-  getMsg() {
-    return this.subject.asObservable();
-  }
 
   setCartItems(product:ProductData[]) {
-    this.cartItems = product;
+    this.cartItems = product;//triggering product items to service
   }
 
   getCartItems () {

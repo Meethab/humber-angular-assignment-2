@@ -10,8 +10,7 @@ import { OrderData } from './models/order-data.interface';
 })
 export class AppComponent {
   title = 'humber-angular-assignment-2';
-  
- // @Input() orderitem!: OrderData;
+
 
   constructor(private proService: ProductsService) { }
 

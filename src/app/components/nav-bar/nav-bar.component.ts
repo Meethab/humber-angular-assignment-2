@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class NavBarComponent {
   @Input() title = '';
+  
+  @Output() searchEntered: EventEmitter<string> = new EventEmitter()
   
   productArr: any;  
 
@@ -20,19 +22,10 @@ export class NavBarComponent {
         
       });
   }
-  filteredProducts: any;
+  
    
-  onSearch(text: string) {
-    if (text !== "") {
-      this.filteredProducts = this.productArr.filter((product:any) => {
-        const lowerCaseText = text.toLowerCase();
-        const lowerCaseProductName = product.name.toLowerCase();
-        return lowerCaseProductName.includes(lowerCaseText);
-      })
-    } else {
-      this.filteredProducts = this.productArr;
-    }
-
+  onSearch(text: string) {  
+    this.searchEntered.emit(text);
    } 
 
 }

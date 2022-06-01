@@ -1,6 +1,7 @@
-<nav-bar title="Humber e-store"></nav-bar>
+<nav-bar title="Humber e-store" (searchEntered) = "filteredProductsBySearch($event)"></nav-bar>
+
 <div class="container">
-    <item *ngFor="let products of productArr" [item]="products"></item>    
+    <item *ngFor="let products of filteredProducts" [item]="products"></item>    
 </div>
 
 
